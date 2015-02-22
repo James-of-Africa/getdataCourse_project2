@@ -40,7 +40,7 @@ aves <- data.frame(do.call("rbind", lapply(groups, function (x) {sapply(x,mean)}
 aves$subject  <- as.numeric(sub("(.*)\\..*","\\1",names(groups)))  # rebuild subject column
 aves$activity <- as.factor( sub(".*\\.(.*)","\\1",names(groups)))  # rebuild activity column
 names(aves) <- gsub("\\.","-",sub("\\.\\.","()",names(aves)))      # fix mangaled variable names
-aves <- aves[unique(c("subject", "activity", names(aves)))] # reorder columns
+aves <- aves[unique(c("subject", "activity", names(aves)))]        # reorder columns
 
 write.table(aves,'out.txt',row.name=FALSE)
 
