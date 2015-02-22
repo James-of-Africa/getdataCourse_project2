@@ -8,7 +8,7 @@ Running the run_analysis.R script from the command line or the repl should gener
 See the codebook for more information on the output data structure.
 
 Summary of the run_analysis.R script
-* Variable names from the features.txt file are mapped to the data. 
+* Variable names from the 'features.txt' file are mapped to the data. 
 * The training and test datasets are merged together.
 * The dataset is filtered down to only the variables that measure mean and standard deviation.
   + i.e variable names that contain '-mean()' or '-std()'
