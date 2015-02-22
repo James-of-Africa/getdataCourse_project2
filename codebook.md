@@ -40,5 +40,3 @@ fBodyGyro-std()-Y,           fBodyGyro-std()-Z,         fBodyAccMag-mean(),     
 fBodyBodyAccJerkMag-mean(),  fBodyBodyAccJerkMag-std(), fBodyBodyGyroMag-mean(),     fBodyBodyGyroMag-std(),      
 fBodyBodyGyroJerkMag-mean(), fBodyBodyGyroJerkMag-std()
 
-...
-
