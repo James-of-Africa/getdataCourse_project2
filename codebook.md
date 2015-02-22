@@ -15,10 +15,10 @@ activity
 ### Other Columns
 * these column names are pulled from the 'features.txt' file in the original dataset.
 * they contain the mean of the column with the same name in the original dataset (grouped by subject and activity).
-* accelerations are measured in standard earth gravity units 'g'. 
+* accelerations are measured in standard earth gravity units 'g' (columns with 'Acc' in the name).
 * body acceleration is calculated by subtracting the earth gravity from the total acceleration
-* angular velocity is measured in radians/second.
-* see the codebook of the original data for units and other relevant information.
+* angular velocity is measured in radians/second (columns with 'Gyro' in the name).
+* see the codebook of the original data for other relevant information.
 * a list of these columns follows:
 tBodyAcc-mean()-X           tBodyAcc-mean()-Y         tBodyAcc-mean()-Z           tBodyAcc-std()-X            
 tBodyAcc-std()-Y            tBodyAcc-std()-Z          tGravityAcc-mean()-X        tGravityAcc-mean()-Y        
