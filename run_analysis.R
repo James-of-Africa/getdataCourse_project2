@@ -15,9 +15,9 @@ if(! file.exists(dataFolder) ) stop("The data folder 'UCI HAR Dataset' was not f
 activities <- read.table(paste0(dataFolder,"/",activitiesF))$V2  # only activities names are needed as the numbers match the position
 features   <- read.table(paste0(dataFolder,"/",featuresF))$V2    # only features   names are needed as the numbers match the position
 
-# read  "X_---.txt", "subject_---.txt" and "y_---.txt" files naming   # 4 Appropriately labels the data set with descriptive variable names. 
-#      cbind "X_---.txt", "subject_---.txt" and "y_---.txt" files     # tidy data
-# then rbind "test" and "train" folders                               # 1 Merges the training and the test sets to create one data set.
+# read "X_---.txt", "subject_---.txt" and "y_---.txt" files renaming cols # 4 Appropriately labels the data set with descriptive variable names. 
+#      cbind "X_---.txt", "subject_---.txt" and "y_---.txt" files         # tidy data
+# then rbind "test" and "train" folders                                   # 1 Merges the training and the test sets to create one data set.
 data       <- data.frame()
 for(fld in subFolders) {
   data <- rbind(data, cbind( setNames(read.table(paste0(dataFolder,"/",fld,"/",sub('---',fld,subjectMapF))) , "subject"),
