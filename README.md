@@ -8,5 +8,5 @@ Running the run_analysis.R script from the command line or the repl should gener
 See the codebook for more information on the output data structure.
 
 Summary of the run_analysis.R script
-*sd
-*dd
+* sd
+* dd
