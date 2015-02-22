@@ -8,5 +8,11 @@ Running the run_analysis.R script from the command line or the repl should gener
 See the codebook for more information on the output data structure.
 
 Summary of the run_analysis.R script
-* sd
-* dd
+* Variable names from the features.txt file are mapped to the data. 
+* The training and test datasets are merged together.
+* The dataset is filtered down to only the variables that measure mean and standard deviation.
+  + i.e variable names that contain '-mean()' or '-std()'
+* Activity numbers are mapped to names using the 'activity_labels.txt' file.
+* The average of each variable for each activity and each subject is then calculated and written to file 'out.txt'.
+
+For more detail see the comments in the run_analysis.R file
