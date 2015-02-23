@@ -34,16 +34,15 @@ data$activity <- as.factor(activities[data$activity])
 #5 From the data set in step 4, creates a second, independent tidy data set with the average 
 #  of each variable for each activity and each subject.
 #  write out  txt file with write.table() and using row.name=FALSE
-groups <- split(data[grep("-mean\\(\\)|-std\\(\\)", names(data), value = T)], list(data$subject, data$activity))
-aves <- data.frame(do.call("rbind", lapply(groups, function (x) {sapply(x,mean)})))
+groups <- split(data[-(1:2)], list(data$subject, data$activity)) # group by the combination of subject and activity
 
-aves$subject  <- as.numeric(sub("(.*)\\..*","\\1",names(groups)))  # rebuild subject column
-aves$activity <- as.factor( sub(".*\\.(.*)","\\1",names(groups)))  # rebuild activity column
+aves <- data.frame(subject=as.numeric(sub("(.*)\\..*","\\1",names(groups))),
+                   activity=as.factor( sub(".*\\.(.*)","\\1",names(groups)))) # build subject and activity column
+aves <- cbind(aves, data.frame(do.call("rbind", lapply(groups, function (x) {sapply(x,mean)})))) # cbind in mean values
+
 names(aves) <- gsub("\\.","-",sub("\\.\\.","()",names(aves)))      # fix mangaled variable names
-aves <- aves[unique(c("subject", "activity", names(aves)))]        # reorder columns
 
 write.table(aves,'out.txt',row.name=FALSE)
-
 
 
 
