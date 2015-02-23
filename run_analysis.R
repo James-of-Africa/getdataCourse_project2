@@ -37,10 +37,9 @@ data$activity <- as.factor(activities[data$activity])
 groups <- split(data[-(1:2)], list(data$subject, data$activity)) # group by the combination of subject and activity
 
 aves <- data.frame(subject=as.numeric(sub("(.*)\\..*","\\1",names(groups))),
-                   activity=as.factor( sub(".*\\.(.*)","\\1",names(groups)))) # build subject and activity column
-aves <- cbind(aves, data.frame(do.call("rbind", lapply(groups, function (x) {sapply(x,mean)})))) # cbind in mean values
+                   activity=as.factor( sub(".*\\.(.*)","\\1",names(groups))))        # build subject and activity column
+aves <- cbind(aves, do.call("rbind", lapply(groups, function (x) {sapply(x,mean)}))) # cbind in mean values
 
-names(aves) <- gsub("\\.","-",sub("\\.\\.","()",names(aves)))      # fix mangaled variable names
 
 write.table(aves,'out.txt',row.name=FALSE)
 
